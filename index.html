@@ -322,6 +322,14 @@ footer{padding:35px 0;border-top:1px solid #222;color:#888}.foot{display:flex;ju
         value="false"
       >
 
+      <!-- Después de enviar, vuelve automáticamente a la misma página de NASA -->
+      <input
+        type="hidden"
+        name="_next"
+        id="volverNASA"
+        value=""
+      >
+
       <button class="btn primary" type="submit">
         Enviar mensaje
       </button>
@@ -342,6 +350,13 @@ footer{padding:35px 0;border-top:1px solid #222;color:#888}.foot{display:flex;ju
     </div>
   </div>
 </footer>
+
+<script>
+  // Indica a FormSubmit que, después de enviar el correo,
+  // vuelva a la página de NASA desde la que se envió el formulario.
+  document.getElementById("volverNASA").value =
+    window.location.origin + window.location.pathname;
+</script>
 
 </body>
 </html>
